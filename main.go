@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/joho/godotenv"
+	"github.com/sangeeth518/learning-routes/database"
 	"github.com/sangeeth518/learning-routes/router"
 )
 
@@ -14,6 +15,7 @@ func init() {
 		fmt.Println("failed to lod env")
 		return
 	}
+	database.ConnectTODb()
 }
 func main() {
 

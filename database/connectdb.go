@@ -2,6 +2,7 @@ package database
 
 import (
 	"log"
+
 	"os"
 
 	"github.com/sangeeth518/learning-routes/models"
