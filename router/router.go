@@ -30,7 +30,7 @@ func (r routes) User(g *gin.RouterGroup) {
 		case http.MethodPost:
 			users.POST(singleRoute.Path, singleRoute.HandleFunc)
 		case http.MethodPut:
-			users.POST(singleRoute.Path, singleRoute.HandleFunc)
+			users.PUT(singleRoute.Path, singleRoute.HandleFunc)
 		case http.MethodDelete:
 			users.DELETE(singleRoute.Path, singleRoute.HandleFunc)
 

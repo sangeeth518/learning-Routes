@@ -15,14 +15,15 @@ var Body struct {
 
 func HelloUser(c *gin.Context) {
 
-	if c.BindJSON(&Body) != nil {
+	err := c.BindJSON(&Body)
+	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"err": "failed to read body"})
 		return
 
 	}
 	// database.ConnectTODb()
-	newuser := models.User{Name: Body.Name, Email: Body.Email}
-	result := database.DB.Create(&newuser)
+	user := models.User{Name: Body.Name, Email: Body.Email}
+	result := database.DB.Create(&user)
 	if result.Error != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"err": "failed to create body"})
 		return

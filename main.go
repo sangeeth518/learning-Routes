@@ -14,6 +14,7 @@ func init() {
 	if err != nil {
 		fmt.Println("failed to lod env")
 		return
+
 	}
 	database.ConnectTODb()
 }
